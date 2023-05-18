@@ -1,7 +1,8 @@
-import { dbConnection } from "@/utils/db";
+import { dbConnect, dbClose } from "@/utils/db";
 
-dbConnection();
+dbConnect();
 
 export default function handler(req, res) {
+  dbClose();
   res.status(200).json({ name: 'John Doe' })
 }
